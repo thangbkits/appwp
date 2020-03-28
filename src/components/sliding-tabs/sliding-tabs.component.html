@@ -1,0 +1,72 @@
+
+<!-- Home-1 For Segments With Not Image -->
+<!--<ion-segment *ngIf="type!='image'" [(ngModel)]="selected" scrollable>-->
+  <!--<ion-segment-button value="0" (click)="changeTab('0')">{{'All'|translate}}</ion-segment-button>-->
+  <!--<ion-segment-button value="{{c.id}}" *ngFor="let c of shared.allCategories" (click)="changeTab(c)">{{c.name}}-->
+  <!--</ion-segment-button>-->
+
+
+<!--</ion-segment>-->
+
+<!--&lt;!&ndash; Home-2 For Segments With Image &ndash;&gt;-->
+<!--<ion-segment *ngIf="type=='image'" [(ngModel)]="selected" scrollable>-->
+  <!--<ion-segment-button value="0" (click)="changeTab('0')">-->
+    <!--<img src="assets/home-page/category.png">-->
+    <!--{{'All'|translate}}</ion-segment-button>-->
+  <!--<ion-segment-button value="{{c.id}}" *ngFor="let c of shared.allCategories" (click)="changeTab(c)">-->
+    <!--<img *ngIf="c.image" src="{{c.image.src}}">-->
+    <!--{{c.name}} </ion-segment-button>-->
+<!--</ion-segment>-->
+
+<!--&lt;!&ndash; scrollable segment divisions &ndash;&gt;-->
+
+<!--<div [ngSwitch]="selected">-->
+<!--</div>-->
+<!--<div *ngIf="selected!==23">-->
+  <!--<ion-grid class="ion-no-padding">-->
+    <!--<ion-row class="ion-no-padding">-->
+      <!--<ion-col *ngFor="let p of products23" size="6" class="ion-no-padding">-->
+        <!--<app-product [data]="p" [type]="'normal'"></app-product>-->
+      <!--</ion-col>-->
+    <!--</ion-row>-->
+  <!--</ion-grid>-->
+<!--</div>-->
+<!--<ion-grid class="ion-no-padding">-->
+  <!--<ion-row class="ion-no-padding">-->
+    <!--<ion-col *ngFor="let p of products" size="6" class="ion-no-padding">-->
+      <!--<app-product [data]="p" [type]="'normal'"></app-product>-->
+    <!--</ion-col>-->
+  <!--</ion-row>-->
+<!--</ion-grid>-->
+<!--&lt;!&ndash; infinite scroll &ndash;&gt;-->
+<!--<ion-infinite-scroll threshold="10px" #infinite (ionInfinite)="getProducts($event)">-->
+  <!--<ion-infinite-scroll-content></ion-infinite-scroll-content>-->
+<!--</ion-infinite-scroll>-->
+<div class="title">
+  <h6>Bàn ghế ăn</h6>
+  <span class="d-flex align-items-center" (click)="goCate(23)">Xem thêm  <ion-icon name="arrow-round-forward"></ion-icon></span>
+</div>
+<ion-slides [options]="sliderConfig">
+  <ion-slide *ngFor="let p of products23">
+    <app-product [data]="p" [type]="'normal'"></app-product>
+  </ion-slide>
+  <ion-slide>
+    <ion-button fill="clear"> {{'Xem thêm'| translate}}
+      <ion-icon name="arrow-dropright"></ion-icon>
+    </ion-button>
+  </ion-slide>
+</ion-slides>
+<div class="title">
+  <h6>Bàn trà</h6>
+  <span class="d-flex align-items-center" (click)="goCate22(22)">Xem thêm  <ion-icon name="arrow-round-forward"></ion-icon></span>
+</div>
+<ion-slides [options]="sliderConfig">
+  <ion-slide *ngFor="let p of products22">
+    <app-product [data]="p" [type]="'normal'" [show]="false"></app-product>
+  </ion-slide>
+  <ion-slide>
+    <ion-button fill="clear"> {{'Xem thêm'| translate}}
+      <ion-icon name="arrow-dropright"></ion-icon>
+    </ion-button>
+  </ion-slide>
+</ion-slides>

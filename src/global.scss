@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,298 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap");
+:root,
+:root[mode="md"],
+:root[mode="md"] {
+  --ion-font-family: "Roboto", "noto-sans";
+  font-family: var(--ion-font-family) !important;
+}
+ion-header {
+  ion-toolbar {
+    --background: var(--ion-color-primary);
+    --color: white;
+    ion-title {
+      ion-img {
+        height: 25px;
+      }
+    }
+    ion-buttons {
+      ion-icon {
+        zoom: 1.3;
+      }
+      ion-button {
+        overflow: visible !important;
+        ion-badge {
+          --background: var(--ion-color-secondary);
+          --color: white;
+          // --padding-top:
+          position: absolute;
+          top: 0px;
+          right: 1px;
+          // border-radius: 100%;
+        }
+      }
+    }
+  }
+}
+
+ion-content {
+  --background: #fafafa;
+  ion-item {
+    --background: #fafafa;
+  }
+}
+.top-icon-header {
+  padding-top: 10px;
+  ion-button {
+    text-transform: capitalize;
+    --padding-start: 7px;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    ion-icon {
+      font-size: 12px;
+      margin-right: 3px;
+      margin-left: 3px;
+    }
+  }
+
+  #second {
+    --padding-end: 5px;
+    font-size: 10px;
+    color: var(--ion-color-secondary);
+    text-transform: uppercase;
+    margin-left: auto;
+    ion-icon {
+      font-size: 10px;
+      margin: 0;
+    }
+  }
+}
+.swiper-slide {
+  text-align: left;
+}
+//=============================== rtl layout =========================
+[dir="rtl"] {
+  ion-header {
+    ion-toolbar {
+      ion-buttons {
+        ion-button {
+          ion-badge {
+            right: auto;
+            left: 1px;
+          }
+        }
+      }
+    }
+  }
+
+  .top-icon-header {
+    #second {
+      margin-right: auto;
+      margin-left: 0;
+    }
+  }
+}
+[dir="rtl"] {
+  .banner-slider.swiper-container,
+  .product-slides.swiper-container {
+    padding-right: 0px;
+  }
+  .swiper-container {
+    padding-right: 10px;
+  }
+  .swiper-slide {
+    text-align: right !important;
+  }
+  .product-component {
+    ion-item {
+      #list-heart-icon {
+        right: auto;
+        left: 10px;
+      }
+      .sale {
+        right: auto;
+        left: 0;
+      }
+      .featured {
+        right: auto;
+        left: 0;
+      }
+      ion-label {
+        margin-right: 10px;
+      }
+
+      ion-thumbnail {
+        .badge-img {
+          right: 9px;
+          left: auto;
+          top: 9px;
+          transform: rotate(90deg) scaleX(1);
+        }
+      }
+    }
+  }
+}
+app-product {
+  width: 100%;
+}
+
+.animate-item {
+  animation: fadeIn;
+}
+.title{
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h6{
+    opacity: .3;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  span{
+    font-size: 0.8rem;
+    color: #0bb8cc;
+    font-weight: lighter;
+  }
+}
+.product-component{
+  ion-card{
+    #image{
+      height: 150px !important;
+      object-fit: cover;
+      width: 100% !important;
+    }
+  }
+}
+.option-acf{
+  .tt_khuyen_mai{
+    display: block;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    position: relative;
+    margin: 0px 0px 12px;
+    background: #fff;
+    padding-bottom: 10px;
+  }
+  .tt_khuyen_mai ul {
+    margin-bottom: 0.1em;
+  }
+  .tt_khuyen_mai strong {
+    display: block;
+    overflow: hidden;
+    font-size: 15px;
+    color: #333;
+    padding: 8px 15px 0px 15px;
+    text-transform: uppercase;
+  }
+  .tt_khuyen_mai ul li{
+    list-style: none;
+  }
+  .tt_khuyen_mai ul li span {
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    color:#333;
+    padding: 0 10px 3px 23px;
+  }
+  .tt_khuyen_mai ul li span::before {
+    content: '';
+    margin-left: -20px;
+    background: url("assets/checker2x.png");
+    width: 14px;
+    height: 14px;
+    background-size: 14px 14px;
+    margin-right: 0;
+    float: left;
+    margin-top: 2px;
+  }
+  .anh_km ul li {
+    padding-left: 0em;
+    margin-left: auto;
+  }
+  .slides {
+    list-style: none;
+  }
+
+  .slides img{
+    width: 100%;
+    border-radius: 3px;
+    border: none;
+    height: auto;
+    cursor: pointer;
+    margin-left: 0px;
+  }
+  #dat_hang {
+    margin-bottom: 12px;
+  }
+  #dat_hang span{
+    font-size: 0.9em;
+  }
+
+  .oder_tragop {
+    display: block;
+    overflow: hidden;
+    margin: 7px auto;
+    padding: 0 10px;
+  }
+  .oder_tragop .buy_repay {
+    line-height: normal;
+    display: block;
+    padding: 7px 0;
+    text-align: center;
+    margin: 10px 0 0;
+    background: #288ad6;
+    color: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-transform: uppercase;
+    width: 48.5%;
+    float: left;
+  }
+  .oder_tragop span {
+    display: block;
+    font-size: 13px;
+    color: #fff;
+    text-transform: none;
+    padding-top: 3px;
+  }
+  .oder_tragop .tra_gop_the.cw {
+    float: right;
+  }
+  .oder_tragop .tra_gop_the {
+    line-height: normal;
+    display: block;
+    padding: 7px 0;
+    text-align: center;
+    margin: 10px 0 0;
+    background: #288ad6;
+    color: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-transform: uppercase;
+    width: 48.5%;
+    float: left;
+  }
+  #dat_hang {
+    display: block;
+    overflow: hidden;
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    color: #333;
+    margin: 0px;
+    background: #f4f4f4;
+    border-radius: 3px;
+    border: none;
+    width: 100%;
+  }
+
+}
